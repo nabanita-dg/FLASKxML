@@ -1,0 +1,1 @@
+from project_iris import app_iris
