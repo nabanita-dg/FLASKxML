@@ -1,38 +1,22 @@
 <html>
 <head>
 <h1>Nabanita's ML Projects</h1>
+<link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/index_cs.css') }}">
 </head>
 <body>
 ML Project Iris Flower Prediction!
 <button onclick="inputTableFunction()">Input Table</button>
 <button onclick="targetTableFunction()">Target Table</button>
+
 <div class="view-table">
-<div id="iris_input_table" style="display:none">
+<div class="detailed-table" id="iris_input_table" style="display:none">
 {{ iris_input_table|safe }}
 </div>
 
-<div id="iris_target_table" style="display:none">
+<div class="detailed-table" id="iris_target_table" style="display:none">
   {{ iris_target_table|safe }}
   </div>
 </div>
-<script>
-    function inputTableFunction() {
-  var x = document.getElementById("iris_input_table");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-function targetTableFunction() {
-  var x = document.getElementById("iris_target_table");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
+<script type="text/javascript" src="{{ url_for('.static', filename='js/index_js.js')}}"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for
 from iris_api.process import iris_process
 
-app_iris = Blueprint("iris_bp", __name__, template_folder="templates")
+app_iris = Blueprint("iris_bp", __name__, template_folder="templates", static_folder='static')
 
 @app_iris.route("/")
 def home():

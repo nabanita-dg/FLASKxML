@@ -1,7 +1,7 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
-app_knn=Blueprint("knn_bp",__name__,template_folder="templates")
+app_knn=Blueprint("knn_bp",__name__,template_folder="templates", static_folder='static')
 
 @app_knn.route("/")
 def index():
-    return "<h1>KNN Application</h1>"
+    return render_template("knn_index.html")
