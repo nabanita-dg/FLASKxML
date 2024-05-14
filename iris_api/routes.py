@@ -3,9 +3,9 @@ from iris_api.process import iris_process
 
 app_iris = Blueprint("iris_bp", __name__, template_folder="templates", static_folder='static')
 
-@app_iris.route("/")
+@app_iris.route("/home")
 def home():
-    return redirect(url_for("iris_bp.index"))
+    return render_template("home.html")
 
 @app_iris.route("/index")
 def index():
