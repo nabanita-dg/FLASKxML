@@ -1,0 +1,22 @@
+<html>
+<head>
+<h1>Nabanita's ML Projects</h1>
+</head>
+<body>
+ML Project Iris Flower Prediction!
+<button onclick="myFunction()">Click Me</button>
+<div id="iris_data" style="display:none">
+{{ iris_data|safe }}
+</div>
+<script>
+    function myFunction() {
+  var x = document.getElementById("iris_data");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>

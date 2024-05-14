@@ -1,5 +1,10 @@
-from project_iris import app_iris
+from flask import Flask
+from iris_api.routes import app_iris
+
+app = Flask(__name__)
+app.register_blueprint(app_iris, url_prefix="/iris")
+#app.register_blueprint(app_iris)
 
 if __name__=='__main__':
-    app_iris.debug = True
-    app_iris.run(host = '0.0.0.0', port = 8000)
+    app.debug = True
+    app.run(host = '0.0.0.0', port = 8000)
