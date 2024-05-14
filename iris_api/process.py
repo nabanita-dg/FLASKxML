@@ -6,9 +6,12 @@ def iris_process():
     df_X=df.data
     df_Y=df.target
     feature_names=df.feature_names
-    df_iris=pd.DataFrame(df_X, columns=feature_names)
-    
-    df_iris_table=df_iris.to_html(header="true", table_id="table")
-    iris_dict={"iris_input_table":df_iris_table,
-               "iris_target_table":df_iris_table}
+    df_iris_input=pd.DataFrame(df_X, columns=feature_names)
+    df_iris_input_table=df_iris_input.to_html(header="true", table_id="table")
+
+    df_iris_target=pd.DataFrame(df_Y)   
+    df_iris_target_table=df_iris_target.to_html(header="false",table_id="table2")
+
+    iris_dict={"iris_input_table":df_iris_input_table,
+               "iris_target_table":df_iris_target_table}
     return iris_dict

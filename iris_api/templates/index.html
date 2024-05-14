@@ -4,13 +4,29 @@
 </head>
 <body>
 ML Project Iris Flower Prediction!
-<button onclick="myFunction()">Click Me</button>
-<div id="iris_data" style="display:none">
-{{ iris_data|safe }}
+<button onclick="inputTableFunction()">Input Table</button>
+<button onclick="targetTableFunction()">Target Table</button>
+<div class="view-table">
+<div id="iris_input_table" style="display:none">
+{{ iris_input_table|safe }}
+</div>
+
+<div id="iris_target_table" style="display:none">
+  {{ iris_target_table|safe }}
+  </div>
 </div>
 <script>
-    function myFunction() {
-  var x = document.getElementById("iris_data");
+    function inputTableFunction() {
+  var x = document.getElementById("iris_input_table");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function targetTableFunction() {
+  var x = document.getElementById("iris_target_table");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {

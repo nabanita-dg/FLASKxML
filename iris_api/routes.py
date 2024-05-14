@@ -11,4 +11,5 @@ def home():
 def index():
     iris_dict=iris_process()
     return render_template("index.html",
-                           iris_data=iris_dict["iris_input_table"])
+                           iris_input_table=iris_dict["iris_input_table"],
+                           iris_target_table=iris_dict["iris_target_table"])
